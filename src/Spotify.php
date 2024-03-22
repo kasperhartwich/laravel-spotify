@@ -19,10 +19,10 @@ class Spotify
      */
     public function album(string $id): PendingRequest
     {
-        $endpoint = '/albums/'.$id;
+        $endpoint = "/albums/" . $id;
 
         $acceptedParams = [
-            'market' => $this->defaultConfig['market'],
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -36,12 +36,12 @@ class Spotify
      */
     public function albumTracks(string $id): PendingRequest
     {
-        $endpoint = '/albums/'.$id.'/tracks/';
+        $endpoint = "/albums/" . $id . "/tracks/";
 
         $acceptedParams = [
-            'limit' => null,
-            'offset' => null,
-            'market' => $this->defaultConfig['market'],
+            "limit" => null,
+            "offset" => null,
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -55,11 +55,11 @@ class Spotify
      */
     public function albums($ids): PendingRequest
     {
-        $endpoint = '/albums/';
+        $endpoint = "/albums/";
 
         $acceptedParams = [
-            'ids' => Validator::validateArgument('ids', $ids),
-            'market' => $this->defaultConfig['market'],
+            "ids" => Validator::validateArgument("ids", $ids),
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -73,7 +73,7 @@ class Spotify
      */
     public function artist(string $id): PendingRequest
     {
-        $endpoint = '/artists/'.$id;
+        $endpoint = "/artists/" . $id;
 
         return new PendingRequest($endpoint);
     }
@@ -86,13 +86,13 @@ class Spotify
      */
     public function artistAlbums(string $id): PendingRequest
     {
-        $endpoint = '/artists/'.$id.'/albums/';
+        $endpoint = "/artists/" . $id . "/albums/";
 
         $acceptedParams = [
-            'include_groups' => null,
-            'country' => $this->defaultConfig['country'],
-            'limit' => null,
-            'offset' => null,
+            "include_groups" => null,
+            "country" => $this->defaultConfig["country"],
+            "limit" => null,
+            "offset" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -106,10 +106,10 @@ class Spotify
      */
     public function artistTopTracks(string $id): PendingRequest
     {
-        $endpoint = '/artists/'.$id.'/top-tracks/';
+        $endpoint = "/artists/" . $id . "/top-tracks/";
 
         $acceptedParams = [
-            'country' => $this->defaultConfig['country'],
+            "country" => $this->defaultConfig["country"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -123,7 +123,7 @@ class Spotify
      */
     public function artistRelatedArtists(string $id): PendingRequest
     {
-        $endpoint = '/artists/'.$id.'/related-artists/';
+        $endpoint = "/artists/" . $id . "/related-artists/";
 
         return new PendingRequest($endpoint);
     }
@@ -136,10 +136,10 @@ class Spotify
      */
     public function artists($ids): PendingRequest
     {
-        $endpoint = '/artists/';
+        $endpoint = "/artists/";
 
         $acceptedParams = [
-            'ids' => Validator::validateArgument('ids', $ids),
+            "ids" => Validator::validateArgument("ids", $ids),
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -153,11 +153,11 @@ class Spotify
      */
     public function category(string $id): PendingRequest
     {
-        $endpoint = '/browse/categories/'.$id;
+        $endpoint = "/browse/categories/" . $id;
 
         $acceptedParams = [
-            'country' => $this->defaultConfig['country'],
-            'locale' => $this->defaultConfig['locale'],
+            "country" => $this->defaultConfig["country"],
+            "locale" => $this->defaultConfig["locale"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -171,12 +171,12 @@ class Spotify
      */
     public function categoryPlaylists(string $id): PendingRequest
     {
-        $endpoint = '/browse/categories/'.$id.'/playlists/';
+        $endpoint = "/browse/categories/" . $id . "/playlists/";
 
         $acceptedParams = [
-            'country' => $this->defaultConfig['country'],
-            'limit' => null,
-            'offset' => null,
+            "country" => $this->defaultConfig["country"],
+            "limit" => null,
+            "offset" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -189,13 +189,13 @@ class Spotify
      */
     public function categories(): PendingRequest
     {
-        $endpoint = '/browse/categories/';
+        $endpoint = "/browse/categories/";
 
         $acceptedParams = [
-            'country' => $this->defaultConfig['country'],
-            'locale' => $this->defaultConfig['locale'],
-            'limit' => null,
-            'offset' => null,
+            "country" => $this->defaultConfig["country"],
+            "locale" => $this->defaultConfig["locale"],
+            "limit" => null,
+            "offset" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -209,10 +209,10 @@ class Spotify
      */
     public function episode(string $id): PendingRequest
     {
-        $endpoint = '/episodes/'.$id;
+        $endpoint = "/episodes/" . $id;
 
         $acceptedParams = [
-            'market' => $this->defaultConfig['market'],
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -226,11 +226,11 @@ class Spotify
      */
     public function episodes($ids): PendingRequest
     {
-        $endpoint = '/episodes/';
+        $endpoint = "/episodes/";
 
         $acceptedParams = [
-            'ids' => Validator::validateArgument('ids', $ids),
-            'market' => $this->defaultConfig['market'],
+            "ids" => Validator::validateArgument("ids", $ids),
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -243,14 +243,14 @@ class Spotify
      */
     public function featuredPlaylists(): PendingRequest
     {
-        $endpoint = '/browse/featured-playlists/';
+        $endpoint = "/browse/featured-playlists/";
 
         $acceptedParams = [
-            'locale' => $this->defaultConfig['locale'],
-            'country' => $this->defaultConfig['country'],
-            'timestamp' => null,
-            'limit' => null,
-            'offset' => null,
+            "locale" => $this->defaultConfig["locale"],
+            "country" => $this->defaultConfig["country"],
+            "timestamp" => null,
+            "limit" => null,
+            "offset" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -263,12 +263,12 @@ class Spotify
      */
     public function newReleases(): PendingRequest
     {
-        $endpoint = '/browse/new-releases/';
+        $endpoint = "/browse/new-releases/";
 
         $acceptedParams = [
-            'country' => $this->defaultConfig['country'],
-            'limit' => null,
-            'offset' => null,
+            "country" => $this->defaultConfig["country"],
+            "limit" => null,
+            "offset" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -282,12 +282,15 @@ class Spotify
      */
     public function recommendations(SpotifySeed $seed): PendingRequest
     {
-        $endpoint = '/recommendations/';
+        $endpoint = "/recommendations/";
 
-        $acceptedParams = array_merge([
-            'limit' => null,
-            'market' => $this->defaultConfig['market'],
-        ], $seed->getArrayForApi());
+        $acceptedParams = array_merge(
+            [
+                "limit" => null,
+                "market" => $this->defaultConfig["market"],
+            ],
+            $seed->getArrayForApi()
+        );
 
         return new PendingRequest($endpoint, $acceptedParams);
     }
@@ -299,7 +302,7 @@ class Spotify
      */
     public function availableGenreSeeds(): PendingRequest
     {
-        $endpoint = '/recommendations/available-genre-seeds/';
+        $endpoint = "/recommendations/available-genre-seeds/";
 
         return new PendingRequest($endpoint);
     }
@@ -312,7 +315,7 @@ class Spotify
      */
     public function playlistCoverImage(string $id): PendingRequest
     {
-        $endpoint = '/playlists/'.$id.'/images/';
+        $endpoint = "/playlists/" . $id . "/images/";
 
         return new PendingRequest($endpoint);
     }
@@ -325,11 +328,11 @@ class Spotify
      */
     public function playlist(string $id): PendingRequest
     {
-        $endpoint = '/playlists/'.$id;
+        $endpoint = "/playlists/" . $id;
 
         $acceptedParams = [
-            'fields' => null,
-            'market' => $this->defaultConfig['market'],
+            "fields" => null,
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -343,13 +346,13 @@ class Spotify
      */
     public function playlistTracks(string $id): PendingRequest
     {
-        $endpoint = '/playlists/'.$id.'/tracks/';
+        $endpoint = "/playlists/" . $id . "/tracks/";
 
         $acceptedParams = [
-            'fields' => null,
-            'limit' => null,
-            'offset' => null,
-            'market' => $this->defaultConfig['market'],
+            "fields" => null,
+            "limit" => null,
+            "offset" => null,
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -364,15 +367,15 @@ class Spotify
      */
     public function searchItems(string $query, $type): PendingRequest
     {
-        $endpoint = '/search/';
+        $endpoint = "/search/";
 
         $acceptedParams = [
-            'q' => $query,
-            'type' => Validator::validateArgument('type', $type),
-            'market' => $this->defaultConfig['market'],
-            'limit' => null,
-            'offset' => null,
-            'include_external' => null,
+            "q" => $query,
+            "type" => Validator::validateArgument("type", $type),
+            "market" => $this->defaultConfig["market"],
+            "limit" => null,
+            "offset" => null,
+            "include_external" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -386,15 +389,15 @@ class Spotify
      */
     public function searchAlbums(string $query): PendingRequest
     {
-        $endpoint = '/search/';
+        $endpoint = "/search/";
 
         $acceptedParams = [
-            'q' => $query,
-            'type' => 'album',
-            'market' => $this->defaultConfig['market'],
-            'limit' => null,
-            'offset' => null,
-            'include_external' => null,
+            "q" => $query,
+            "type" => "album",
+            "market" => $this->defaultConfig["market"],
+            "limit" => null,
+            "offset" => null,
+            "include_external" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -408,15 +411,15 @@ class Spotify
      */
     public function searchArtists(string $query): PendingRequest
     {
-        $endpoint = '/search/';
+        $endpoint = "/search/";
 
         $acceptedParams = [
-            'q' => $query,
-            'type' => 'artist',
-            'market' => $this->defaultConfig['market'],
-            'limit' => null,
-            'offset' => null,
-            'include_external' => null,
+            "q" => $query,
+            "type" => "artist",
+            "market" => $this->defaultConfig["market"],
+            "limit" => null,
+            "offset" => null,
+            "include_external" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -430,15 +433,15 @@ class Spotify
      */
     public function searchEpisodes(string $query): PendingRequest
     {
-        $endpoint = '/search/';
+        $endpoint = "/search/";
 
         $acceptedParams = [
-            'q' => $query,
-            'type' => 'episode',
-            'market' => $this->defaultConfig['market'],
-            'limit' => null,
-            'offset' => null,
-            'include_external' => null,
+            "q" => $query,
+            "type" => "episode",
+            "market" => $this->defaultConfig["market"],
+            "limit" => null,
+            "offset" => null,
+            "include_external" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -452,15 +455,15 @@ class Spotify
      */
     public function searchPlaylists(string $query): PendingRequest
     {
-        $endpoint = '/search/';
+        $endpoint = "/search/";
 
         $acceptedParams = [
-            'q' => $query,
-            'type' => 'playlist',
-            'market' => $this->defaultConfig['market'],
-            'limit' => null,
-            'offset' => null,
-            'include_external' => null,
+            "q" => $query,
+            "type" => "playlist",
+            "market" => $this->defaultConfig["market"],
+            "limit" => null,
+            "offset" => null,
+            "include_external" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -474,15 +477,15 @@ class Spotify
      */
     public function searchShows(string $query): PendingRequest
     {
-        $endpoint = '/search/';
+        $endpoint = "/search/";
 
         $acceptedParams = [
-            'q' => $query,
-            'type' => 'show',
-            'market' => $this->defaultConfig['market'],
-            'limit' => null,
-            'offset' => null,
-            'include_external' => null,
+            "q" => $query,
+            "type" => "show",
+            "market" => $this->defaultConfig["market"],
+            "limit" => null,
+            "offset" => null,
+            "include_external" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -496,15 +499,15 @@ class Spotify
      */
     public function searchTracks(string $query): PendingRequest
     {
-        $endpoint = '/search/';
+        $endpoint = "/search/";
 
         $acceptedParams = [
-            'q' => $query,
-            'type' => 'track',
-            'market' => $this->defaultConfig['market'],
-            'limit' => null,
-            'offset' => null,
-            'include_external' => null,
+            "q" => $query,
+            "type" => "track",
+            "market" => $this->defaultConfig["market"],
+            "limit" => null,
+            "offset" => null,
+            "include_external" => null,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -518,10 +521,10 @@ class Spotify
      */
     public function show(string $id): PendingRequest
     {
-        $endpoint = '/shows/'.$id;
+        $endpoint = "/shows/" . $id;
 
         $acceptedParams = [
-            'market' => $this->defaultConfig['market'],
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -535,11 +538,11 @@ class Spotify
      */
     public function shows($ids): PendingRequest
     {
-        $endpoint = '/shows/';
+        $endpoint = "/shows/";
 
         $acceptedParams = [
-            'ids' => Validator::validateArgument('ids', $ids),
-            'market' => $this->defaultConfig['market'],
+            "ids" => Validator::validateArgument("ids", $ids),
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -553,12 +556,12 @@ class Spotify
      */
     public function showEpisodes(string $id): PendingRequest
     {
-        $endpoint = '/shows/'.$id.'/episodes/';
+        $endpoint = "/shows/" . $id . "/episodes/";
 
         $acceptedParams = [
-            'limit' => null,
-            'offset' => null,
-            'market' => $this->defaultConfig['market'],
+            "limit" => null,
+            "offset" => null,
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -572,7 +575,7 @@ class Spotify
      */
     public function audioAnalysisForTrack(string $id): PendingRequest
     {
-        $endpoint = '/audio-analysis/'.$id;
+        $endpoint = "/audio-analysis/" . $id;
 
         return new PendingRequest($endpoint);
     }
@@ -585,7 +588,7 @@ class Spotify
      */
     public function audioFeaturesForTrack(string $id): PendingRequest
     {
-        $endpoint = '/audio-features/'.$id;
+        $endpoint = "/audio-features/" . $id;
 
         return new PendingRequest($endpoint);
     }
@@ -598,10 +601,10 @@ class Spotify
      */
     public function audioFeaturesForTracks($ids): PendingRequest
     {
-        $endpoint = '/audio-features/';
+        $endpoint = "/audio-features/";
 
         $acceptedParams = [
-            'ids' => Validator::validateArgument('ids', $ids),
+            "ids" => Validator::validateArgument("ids", $ids),
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -615,11 +618,11 @@ class Spotify
      */
     public function tracks($ids): PendingRequest
     {
-        $endpoint = '/tracks/';
+        $endpoint = "/tracks/";
 
         $acceptedParams = [
-            'ids' => Validator::validateArgument('ids', $ids),
-            'market' => $this->defaultConfig['market'],
+            "ids" => Validator::validateArgument("ids", $ids),
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -633,10 +636,10 @@ class Spotify
      */
     public function track(string $id): PendingRequest
     {
-        $endpoint = '/tracks/'.$id;
+        $endpoint = "/tracks/" . $id;
 
         $acceptedParams = [
-            'market' => $this->defaultConfig['market'],
+            "market" => $this->defaultConfig["market"],
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
@@ -650,7 +653,7 @@ class Spotify
      */
     public function user(string $id): PendingRequest
     {
-        $endpoint = '/users/'.$id;
+        $endpoint = "/users/" . $id;
 
         return new PendingRequest($endpoint);
     }
@@ -659,15 +662,20 @@ class Spotify
      * Get a list of the playlists owned or followed by a Spotify user.
      *
      * @param string $id
+     * @param integer $limit
+     * @param integer $offset
      * @return PendingRequest
      */
-    public function userPlaylists(string $id): PendingRequest
-    {
-        $endpoint = '/users/'.$id.'/playlists';
+    public function userPlaylists(
+        string $id,
+        int $limit = null,
+        int $offset = null
+    ): PendingRequest {
+        $endpoint = "/users/" . $id . "/playlists";
 
         $acceptedParams = [
-            'limit' => null,
-            'offset' => null,
+            "limit" => $limit,
+            "offset" => $offset,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
