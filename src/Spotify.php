@@ -659,15 +659,17 @@ class Spotify
      * Get a list of the playlists owned or followed by a Spotify user.
      *
      * @param string $id
+     * @param integer $limit
+     * @param integer $offset
      * @return PendingRequest
      */
-    public function userPlaylists(string $id): PendingRequest
+    public function userPlaylists(string $id, int $limit = null, int $offset = null): PendingRequest
     {
         $endpoint = '/users/'.$id.'/playlists';
 
         $acceptedParams = [
-            'limit' => null,
-            'offset' => null,
+            'limit' => $limit,
+            'offset' => $offset,
         ];
 
         return new PendingRequest($endpoint, $acceptedParams);
